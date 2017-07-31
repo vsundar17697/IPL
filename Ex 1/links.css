@@ -1,0 +1,11 @@
+a:link{color:purple}
+a:visted{color:gray}
+a:hover{color:red}
+a:active{color:yellow}
+body{
+	background-image: url("back.jpg");
+}
+*{
+  font-family: "Times New Roman", Georgia, Serif;
+  color: #49b8f0;
+}

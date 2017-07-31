@@ -1,0 +1,17 @@
+*{
+color:black;
+font-size:30px;
+}
+h1{
+color: #49b8f0 ;
+font-family: 'Open San', sans-serif;
+text-shadow: 2px 2px red;
+font-size: 70px;
+font-weight: bold;
+letter-spacing: -1px;
+line-height: 1;
+text-align: center;
+}
+body{
+	background-image: url("back.jpg");
+}
