@@ -1,0 +1,13 @@
+<web-app>
+
+<servlet>
+<servlet-name>numerouno</servlet-name>
+<servlet-class>calc</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>numerouno</servlet-name>
+<url-pattern>/session</url-pattern>
+</servlet-mapping>
+
+</web-app>
