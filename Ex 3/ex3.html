@@ -1,0 +1,136 @@
+<html>
+ <head>
+  <title>DOM Tutorial.</title>
+  <style>
+    body {
+      background-color:white;
+    }
+    button{
+      background-color : darkcyan;
+      border-style: shadow;
+    }
+  </style>
+  <script>
+   function add() {
+   //window.alert(document.getElementById("pul").childNodes[2].textContent);
+   
+   var elem = document.createElement("li");
+   var node = document.createTextNode("Reptiles");  
+   elem.appendChild(node);
+   window.alert(elem.textContent);
+   /*
+   var parli = document.getElementById("pul");
+   parli.childNodes[2].childNodes[2].appendChild(elem);
+   
+   
+   var parli = document.getElementById("pul");
+   window.alert(parli.childNodes[2].childNodes[0].textContent);
+   */
+   }
+   
+   function remove() {
+     var elem = document.getElementById("pul").childNodes[4].childNodes[2];
+	   elem.removeChild(elem.lastChild);
+   }
+   
+    function subtree() {
+     var h3header = document.createElement("h3"); 
+	 var elem = document.createElement("li");
+	 var node = document.createTextNode("Reptiles");
+   h3header.appendChild(node);
+	 elem.appendChild(h3header);
+	 
+	 var ul = document.createElement("ul");
+	 
+	 var l1 = document.createElement("li");
+	 var nodel1 = document.createTextNode("Crocodile");
+	 var l2 = document.createElement("li");
+	 var nodel2 = document.createTextNode("Tortoise");
+	 l1.appendChild(nodel1);
+	 l2.appendChild(nodel2);
+	 ul.appendChild(l1);
+	 	 ul.appendChild(l2);
+	 elem.appendChild(ul);
+	 
+	 var par = document.getElementById("pul");
+	 par.appendChild(elem);
+   }
+   
+   //Add 'animal' before Dolphin.
+   function addD() {
+   var elem = document.createElement("li");
+   var node = document.createTextNode("Whale");
+   elem.appendChild(node);
+   var parli = document.getElementById("pul").childNodes[2].childNodes[2];
+   //window.alert(parli.childNodes[3].textContent);
+   parli.insertBefore(elem,parli.childNodes[3]);
+   }
+   
+   //Add 'animal' after Frog.
+     function addF() {
+   var elem = document.createElement("li");
+   var node = document.createTextNode("Alligator");
+   elem.appendChild(node);
+   var parli = document.getElementById("pul").childNodes[4].childNodes[2];
+   //window.alert(parli.childNodes[3].textContent);
+   parli.insertBefore(elem,parli.childNodes[2]);
+   }
+   
+   //Remove 'Fishes' from Aquatic animals.
+     function removeF() {
+     var elem = document.getElementById("pul").childNodes[2].childNodes[2];
+	 elem.removeChild(elem.firstChild);
+   }
+   
+   //Update 'Apes'.
+   function updateA() {
+    var elem = document.getElementById("pul").childNodes[6].childNodes[2];
+	elem.childNodes[5].textContent = "Planet of the Apes";
+   }
+   
+  </script>
+ </head>
+ 
+ <body>
+ 
+  <button onclick="add()">Add Child</button>
+  <button onclick="remove()">Remove Child</button>
+  <button  onclick="subtree()">SubTree</button>
+  <button  onclick="addD()">before Dolphin</button>
+  <button  onclick="addF()">after Frog</button>
+  <button  onclick="removeF()">remove Fishes</button>
+  <button  onclick="updateA()">update Apes</button>   
+   
+   <ul id="pul"><h1>Classification of animals</h1>
+   
+   <li><h3>Aquatic animals</h3>
+   <ul>
+   <li>Fishes</li>
+   <li>Dolphin</li>
+   <li>Shark</li>
+   </ul>
+   </li>
+   
+   
+   <li><h3>Amphibians</h3>
+   <ul>
+   <li>Frog</li>
+   <li>Toads</li>
+   <li>Salamander</li>
+   </ul>
+   </li>
+   
+   
+   <li><h3>Terrestrial animals</h3>
+   <ul>
+   <li>Lion</li>
+   <li>Elephant</li>
+   <li>Ape</li>
+   </ul>
+   </li>
+   
+   
+   </ul>
+  
+ </body>
+</html>
